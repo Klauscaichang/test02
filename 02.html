@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>angular</title>
+
+    <style >
+        .container{
+            border:1px solid #e0e0e0;
+            width:180px;
+            text-align:center;
+        }
+        input{
+            text-align:center;
+        }
+    </style>
+</head>
+<body ng-app="myApp">
+
+    <div class="container" ng-controller="myC">
+        用户名：<input type="text" ng-model="username">
+        密码：<input type="password" ng-model="password">
+        确认密码：<input type="password" ng-model="confirm">
+        同意协议：<input type="checkbox" ng-model="ifAgree"><br>
+        注册：<input type="button" value="注册" ng-click="commit()">
+    </div>
+
+
+    <script src="node_modules/angular/angular.js"></script>
+    <script>
+
+        var myApp = angular.module('myApp',[]);
+
+        myApp.controller('myC',function($scope){
+
+            $scope.username = '';
+            $scope.password = '';
+            $scope.confirm = '';
+            $scope.ifAgree = false;
+            $scope.commit = function(){
+
+
+            }
+        })
+
+    </script>
+</body>
+</html>
